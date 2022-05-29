@@ -1,0 +1,1 @@
+"./main.obj" "./src/algoritmo.obj" "./src/i2c.obj" "./src/imu.obj" "./src/timer_hw.obj" "./src/uart.obj" "./src/utils.obj" "../lnk_msp430g2553.cmd" -llibc.a 
