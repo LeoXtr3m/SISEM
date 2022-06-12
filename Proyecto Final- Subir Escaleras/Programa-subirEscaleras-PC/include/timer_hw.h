@@ -28,7 +28,7 @@ void config_timer_VLO(void);
 void vInitTimerA(void);
 
 
-void setFlagTimer(unsigned int* flag_timer, int* tiks_new);
+void setFlagTimer(unsigned int* flag_timer);
 
 
 #endif /* INCLUDE_TIMER_HW_H_ */

@@ -185,7 +185,7 @@ void add_XYZ(int* accelX,int* accelY,int* accelZ){   // añade la temperatura al 
     __disable_interrupt();
     //intTOchar(accelX, &buffer_temp[0], &buffer_temp[1], &buffer_temp[2], &buffer_temp[3], &buffer_temp[4]);
 
-    //buffer_temp[5] = ',' ;
+   // buffer_temp[5] = ',' ;
 
     intTOchar(accelY, &buffer_temp[0], &buffer_temp[1], &buffer_temp[2], &buffer_temp[3], &buffer_temp[4]);
 

@@ -38,10 +38,9 @@ void vInitTimerA(void)
 
 }
 
-void setFlagTimer(unsigned int* flag_timer, int * tiks_new){
+void setFlagTimer(unsigned int* flag_timer){
     /*Set flag*/
     Tflag = flag_timer;   /// variable de seteo de tiks
-    SEL_tiks = tiks_new;     /// variable para modificar los tiks
     contTimer=0;
 }
 
@@ -62,7 +61,7 @@ __interrupt void vTimerAInterrupt(void)
 
 
     // Conmuto el led
-    P1OUT ^= BIT0;
+    //P1OUT ^= BIT0;
 
 } //Timer ISR
 

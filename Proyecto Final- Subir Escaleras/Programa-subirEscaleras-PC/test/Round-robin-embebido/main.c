@@ -27,12 +27,6 @@
 
 
 
-/********************************************
- *             VARIABLES UART                *
- ********************************************/
-//int contt=0;
-//int contUART = 0;
-//int banderaUART = 0;
 
 /********************************************
  *             VARIABLES I2C                *
@@ -44,6 +38,10 @@ int accelX = 0;
 int accelY = 0;
 int accelZ = 0;
 
+
+uint8_t resultado = 0;
+
+uint8_t contador = 0;
 
 void main(void)
 
@@ -68,16 +66,13 @@ void main(void)
     /********************************************
      *       INICIALIZAR MODULO DE TIMER        *
      ********************************************/
-    unsigned int tikss =8;
-    unsigned int* Stiks;
-    Stiks=&tikss;
 
     ////bandera del timer
     static unsigned int banderaTimer =0;
     unsigned int* pt_banderaTimer;
     pt_banderaTimer = &banderaTimer ;
 
-    setFlagTimer(pt_banderaTimer, tikss);
+    setFlagTimer(pt_banderaTimer);
 
     P1DIR = 0;  // Pongo todos los pines como entradas
     P1DIR |= LED1; // Ponemos el pin 1.0 como salida
@@ -91,20 +86,6 @@ void main(void)
 
 
     /********************************************
-     *       INICIALIZAMOS EL MODULO UART       *
-     ********************************************/
-
-    //inicializamos la bandera EOL
-    //static unsigned int EOL=0;
-    //unsigned int* pt_EOL;
-    //pt_EOL=&EOL;
-
-    //inicializamos UART
-    //uart_init(pt_EOL);
-
-
-
-    /********************************************
      *       INICIALIZAMOS EL PROGRAMA          *
      ********************************************/
 
@@ -113,34 +94,36 @@ void main(void)
     while (1){
 
         //TICKs  -- se activa de acuerdo a la configuracion de milisegundos configurados en timer_hw.c
-         if (banderaTimer == 1){   //Ticks completos
+         if ((banderaTimer == 1)&&(contador < 150)){   //Ticks completos
              banderaTimer = 0;   // se resetea la bandera en 0
              __disable_interrupt();
              readI2C(ACCEL_ADDRESS, 0x12, msg, 6);
              asignarAccel(msg, &accel);
              __enable_interrupt();
-             //contt++;
-             //banderaUART = 1;
-             algoritmo(accel.x, accel.y, accel.z);
-             //accelX = accel.x ;  //aceleracion en x
-             //accelY = accel.y ;  //aceleracion en y
-             //accelZ = accel.z ;  //aceleracion en z
+             contador++;
+             recopilarDatos(accel.x, accel.y, accel.z);
 
         }
 
 
 
         //UART Si llega informacion se ejecuta
-        //if (banderaUART == 1){
-        //    banderaUART = 0;
-        //    add_XYZ(accel.x, accel.y, accel.z);    // Añade el valor de la temperatura al buffer
-        //    copiar_temp(&buffer_temp[0]);
-        //    transmitir_TX(&buffer_temp[0]);             //mandamos los datos
-        //    contUART++;
-        // }
+        if (contador >= 150){
+            __disable_interrupt();
+            procesarDatos(&resultado);
+            __enable_interrupt();
 
-        //if((banderaTimer == 0)&&(EOL == 0)){
-           // LPM3;
-        //}
+            //Se prende el led de acuerdo al resultado
+            if(resultado == 1){
+                // PRENDER LED  -- Se esta subiendo escaleras
+                P1OUT |= BIT0;
+            }
+            else{
+                // APAGAR LED  -- Se esta bajando escaleras
+                P1OUT |= ~BIT0;
+            }
+            contador = 0;
+        }
+
     }
 }

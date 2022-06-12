@@ -14,6 +14,13 @@ src/algoritmo.obj: C:/Programas\ extras/ti/ccsv8/tools/compiler/ti-cgt-msp430_18
 src/algoritmo.obj: C:/Programas\ extras/ti/ccsv8/tools/compiler/ti-cgt-msp430_18.1.4.LTS/include/machine/_types.h
 src/algoritmo.obj: C:/Programas\ extras/ti/ccsv8/tools/compiler/ti-cgt-msp430_18.1.4.LTS/include/machine/_stdint.h
 src/algoritmo.obj: C:/Programas\ extras/ti/ccsv8/tools/compiler/ti-cgt-msp430_18.1.4.LTS/include/sys/_stdint.h
+src/algoritmo.obj: C:/Programas\ extras/ti/ccsv8/tools/compiler/ti-cgt-msp430_18.1.4.LTS/include/math.h
+src/algoritmo.obj: C:/Programas\ extras/ti/ccsv8/tools/compiler/ti-cgt-msp430_18.1.4.LTS/include/_ti_config.h
+src/algoritmo.obj: C:/Programas\ extras/ti/ccsv8/tools/compiler/ti-cgt-msp430_18.1.4.LTS/include/linkage.h
+src/algoritmo.obj: C:/Programas\ extras/ti/ccsv8/tools/compiler/ti-cgt-msp430_18.1.4.LTS/include/_defs.h
+src/algoritmo.obj: C:/Programas\ extras/ti/ccsv8/tools/compiler/ti-cgt-msp430_18.1.4.LTS/include/machine/_limits.h
+src/algoritmo.obj: C:/Programas\ extras/ti/ccsv8/tools/compiler/ti-cgt-msp430_18.1.4.LTS/include/stdio.h
+src/algoritmo.obj: C:/Programas\ extras/ti/ccsv8/tools/compiler/ti-cgt-msp430_18.1.4.LTS/include/stdarg.h
 
 C:/Users/LeoXtr3m/workspace_v8/CCS/subirEscaleras/src/algoritmo.c: 
 C:/Users/LeoXtr3m/workspace_v8/CCS/subirEscaleras/include/algoritmo.h: 
@@ -29,3 +36,10 @@ C:/Programas\ extras/ti/ccsv8/tools/compiler/ti-cgt-msp430_18.1.4.LTS/include/sy
 C:/Programas\ extras/ti/ccsv8/tools/compiler/ti-cgt-msp430_18.1.4.LTS/include/machine/_types.h: 
 C:/Programas\ extras/ti/ccsv8/tools/compiler/ti-cgt-msp430_18.1.4.LTS/include/machine/_stdint.h: 
 C:/Programas\ extras/ti/ccsv8/tools/compiler/ti-cgt-msp430_18.1.4.LTS/include/sys/_stdint.h: 
+C:/Programas\ extras/ti/ccsv8/tools/compiler/ti-cgt-msp430_18.1.4.LTS/include/math.h: 
+C:/Programas\ extras/ti/ccsv8/tools/compiler/ti-cgt-msp430_18.1.4.LTS/include/_ti_config.h: 
+C:/Programas\ extras/ti/ccsv8/tools/compiler/ti-cgt-msp430_18.1.4.LTS/include/linkage.h: 
+C:/Programas\ extras/ti/ccsv8/tools/compiler/ti-cgt-msp430_18.1.4.LTS/include/_defs.h: 
+C:/Programas\ extras/ti/ccsv8/tools/compiler/ti-cgt-msp430_18.1.4.LTS/include/machine/_limits.h: 
+C:/Programas\ extras/ti/ccsv8/tools/compiler/ti-cgt-msp430_18.1.4.LTS/include/stdio.h: 
+C:/Programas\ extras/ti/ccsv8/tools/compiler/ti-cgt-msp430_18.1.4.LTS/include/stdarg.h: 
